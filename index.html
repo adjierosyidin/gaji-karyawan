@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjie Rosyidin</title>
+</head>
+<body>
+    <script>
+        
+        var data = [
+            pegawai = [
+                1 = [
+                    'nama' = 'Agus',
+                    'gaji' = 8000000,
+                    'jabatan' = 'Junior Officer',
+                    'region' = 'Semarang'
+                ],
+                2 = [
+                    'nama' = 'Dina',
+                    'gaji' = 15000000,
+                    'jabatan' = 'Ass. Manager',
+                    'region' = 'Bandung'
+                ],
+                3 = [
+                    'nama' = 'Joko',
+                    'gaji' = 25000000,
+                    'jabatan' = 'Manager',
+                    'region' = 'Jakarta'
+                ],
+                4 = [
+                    'nama' = 'Achmad',
+                    'gaji' = 13000000,
+                    'jabatan' = 'Middle Officer',
+                    'region' = 'Jakarta'
+                ],
+                5 = [
+                    'nama' = 'Felicia',
+                    'gaji' = 12500000,
+                    'jabatan' = 'Middle Officer',
+                    'region' = 'Bandung'
+                ],
+            ],
+        ];
+
+        console.log(data);
+
+        for(i=1;i<=data['pegawai'].length;i++){
+
+        }
+
+        function cekpenghasilan(gajipokok, region, jabatan){
+            var gajitotal;
+            var tunjangan;
+
+            if(gajipokok >15000000){
+                tunjangan = 10/100;
+            } else if (gajipokok < 15000000 && gajipokok > 10000000) {
+                tunjangan = 12/100;
+            } else {
+                tunjangan = 15/100;
+            }
+
+            nilaitunjangan = gajipokok * tunjangan;
+
+            if(region=='Jakarta'){
+                potongan = 2.5/100;
+            } else if (region=='Bandung') {
+                potongan = 2/100;
+            } else {
+                potongan = 1.8/100;
+            }
+
+            nilaiPotongan = gajipokok * potongan;
+
+            if(jabatan=='Manager'){
+                bonus = 250000;
+            } else if (jabatan=='Ass. Manager') {
+                bonus = 175000;
+            } else if (jabatan=='Senior Officer') {
+                bonus = 150000;
+            } else if (jabatan=='Middle Officer'){
+                bonus = 125000;
+            } else {
+                bonus = 100000;
+            }
+
+            gajitotal = gajipokok + nilaitunjangan + bonus - potongan;
+
+            return gajitotal;
+        };
+    </script>
+</body>
+</html>
