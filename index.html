@@ -9,46 +9,49 @@
 <body>
     <script>
 
-        var data = [
-            'pegawai' = [
-                1 = [
-                    'nama' = 'Agus',
-                    'gaji' = 8000000,
-                    'jabatan' = 'Junior Officer',
-                    'region' = 'Semarang'
-                ],
-                2 = [
-                    'nama' = 'Dina',
-                    'gaji' = 15000000,
-                    'jabatan' = 'Ass. Manager',
-                    'region' = 'Bandung'
-                ],
-                3 = [
-                    'nama' = 'Joko',
-                    'gaji' = 25000000,
-                    'jabatan' = 'Manager',
-                    'region' = 'Jakarta'
-                ],
-                4 = [
-                    'nama' = 'Achmad',
-                    'gaji' = 13000000,
-                    'jabatan' = 'Middle Officer',
-                    'region' = 'Jakarta'
-                ],
-                5 = [
-                    'nama' = 'Felicia',
-                    'gaji' = 12500000,
-                    'jabatan' = 'Middle Officer',
-                    'region' = 'Bandung'
-                ],
-            ],
-        ];
+        var data = {
+            'pegawai' : {
+                1 : {
+                    'nama' : 'Agus',
+                    'gaji' : 8000000,
+                    'jabatan' : 'Junior Officer',
+                    'region' : 'Semarang'
+                },
+                2 : {
+                    'nama' : 'Dina',
+                    'gaji' : 15000000,
+                    'jabatan' : 'Ass. Manager',
+                    'region' : 'Bandung'
+                },
+                3 : {
+                    'nama' : 'Joko',
+                    'gaji' : 25000000,
+                    'jabatan' : 'Manager',
+                    'region' : 'Jakarta'
+                },
+                4 : {
+                    'nama' : 'Achmad',
+                    'gaji' : 13000000,
+                    'jabatan' : 'Middle Officer',
+                    'region' : 'Jakarta'
+                },
+                5 : {
+                    'nama' : 'Felicia',
+                    'gaji' : 12500000,
+                    'jabatan' : 'Middle Officer',
+                    'region' : 'Bandung'
+                },
+            },
+        };
 
-        console.log(data);
+        var result=[];
 
-        for(i=1;i<=data['pegawai'].length;i++){
-
+        for(i=1;i<=5;i++){
+            gaji = cekpenghasilan(data['pegawai'][i]['gaji'],data['pegawai'][i]['region'],data['pegawai'][i]['jabatan']);
+            result.push(data['pegawai'][i]['nama'], gaji);
         }
+
+        console.log(result);
 
         function cekpenghasilan(gajipokok, region, jabatan){
             var gajitotal;
